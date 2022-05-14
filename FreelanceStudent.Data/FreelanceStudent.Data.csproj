@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FreelanceStudent.Core\FreelanceStudent.Core.csproj" />
+    <ProjectReference Include="..\FreelanceStudent.Entity\FreelanceStudent.Entity.csproj" />
   </ItemGroup>
 
 </Project>
