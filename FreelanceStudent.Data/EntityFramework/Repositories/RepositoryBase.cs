@@ -1,13 +1,12 @@
-﻿using FreelanceStudent.Core.Repositories;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
+using FreelanceStudent.Core.Repositories;
+using Microsoft.EntityFrameworkCore;
 
-namespace FreelanceStudent.EntityFramework.Repositories
+namespace FreelanceStudent.Data.EntityFramework.Repositories
 {
     public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> 
         where TEntity : class
@@ -15,10 +14,10 @@ namespace FreelanceStudent.EntityFramework.Repositories
         protected readonly DbContext _dbContext;
         private readonly DbSet<TEntity> _dbSet;
 
-        public RepositoryBase(DbContext dbContext, DbSet<TEntity> dbSet)
+        public RepositoryBase(DbContext dbContext)
         {
             _dbContext = dbContext;
-            _dbSet = dbSet;
+            _dbSet = dbContext.Set<TEntity>();
         }
 
         public async Task AddAsync(TEntity entity)

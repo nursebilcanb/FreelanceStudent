@@ -7,12 +7,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FreelanceStudent.Data.Abstract;
+using FreelanceStudent.Service.Abstract;
 
 namespace FreelanceStudent.Service.Services
 {
-    public class AdvertService : GenericService<Advert, AdvertDto>
+    public class AdvertService : GenericService<Advert, AdvertDto> , IAdvertService
     {
-        public AdvertService(IRepositoryBase<Advert> repositoryBase, IUnitOfWork unitOfWork) : base(repositoryBase, unitOfWork)
+        public AdvertService(IAdvertDal advertDal, IUnitOfWork unitOfWork) : base(advertDal, unitOfWork)
         {
         }
     }

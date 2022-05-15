@@ -19,14 +19,13 @@ namespace FreelanceStudent.Entity.Entities
 
         public string University { get; set; }
 
-        public IEnumerable<string> JobExperiences { get; set; }
+        public IEnumerable<JobExperience> JobExperiences { get; set; }
 
         public string Department { get; set; }
 
-        public IEnumerable<string> ForeignLanguage { get; set; }
+        public IEnumerable<ForeignLanguage> ForeignLanguages { get; set; }
 
-        public IEnumerable<string> ProgrammingLanguage { get; set; }
-
+        public IEnumerable<ProgrammingLanguage> ProgrammingLanguages { get; set; }
     }
 }
 

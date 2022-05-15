@@ -1,18 +1,14 @@
-﻿using FreelanceStudent.Core.Repositories;
-using FreelanceStudent.Core.UnitOfWork;
+﻿using FreelanceStudent.Core.UnitOfWork;
+using FreelanceStudent.Data.Abstract;
 using FreelanceStudent.Entity.DTOs;
 using FreelanceStudent.Entity.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using FreelanceStudent.Service.Abstract;
 
 namespace FreelanceStudent.Service.Services
 {
-    public class BackgroundService : GenericService<Background, BackgroundDto>
+    public class BackgroundService : GenericService<Background, BackgroundDto>, IBackgroundService
     {
-        public BackgroundService(IRepositoryBase<Background> repositoryBase, IUnitOfWork unitOfWork) : base(repositoryBase, unitOfWork)
+        public BackgroundService(IBackgroundDal backgorundDal, IUnitOfWork unitOfWork) : base(backgorundDal, unitOfWork)
         {
         }
     }
